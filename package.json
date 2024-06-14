@@ -19,5 +19,9 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "react": "^18.0.0",
+    "recoil": "^0.7.7"
+  }
 }
