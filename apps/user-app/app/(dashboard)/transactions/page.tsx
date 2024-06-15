@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { P2pTransaction } from "../../../components/p2pTransaction";
+import { P2pTransaction } from "../../../components/P2pTransaction";
 import { authOptions } from "../../lib/auth";
 import prisma from "@repo/db/client";
 

@@ -1,5 +1,8 @@
+"use client"
+import HomePageInfo from "../../../components/HomePageInfo";
+
 export default function() {
     return <div>
-        Dashboard
+        <HomePageInfo></HomePageInfo>
     </div>
 }
