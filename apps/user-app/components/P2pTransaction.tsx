@@ -1,5 +1,13 @@
 import { Card } from "@repo/ui/card";
 
+interface transaction {
+    id: Number;
+    timestamp: Date;
+    fromUserId: Number;
+    toUserId: Number;
+    amount: Number;
+}
+
 export const P2pTransaction = ({
     name,
     transactions
@@ -22,7 +30,7 @@ export const P2pTransaction = ({
     }
     return <Card title={name}>
         <div className="pt-2 border border-gray-300 rounded h-64 overflow-y-auto">
-            {transactions.map(t => (
+            {transactions.map((t:transaction) => (
                 <div  className="flex justify-between border-b border-gray-300 p-2">
                     <div>
                         <div className="text-sm">
