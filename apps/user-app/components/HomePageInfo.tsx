@@ -1,16 +1,14 @@
 "use client"
-import { strict } from "assert";
+
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
 export const HomePageInfo = () => {
     const router = useRouter();
     const pathname = usePathname()
-    
-    
+
     const handleTransfer = () => {
         const href="/transfer"
-        const selected = pathname === href
         router.push(href);
     };
     
@@ -18,13 +16,15 @@ export const HomePageInfo = () => {
     
     const handleP2PTransactions = () => {
         const href="/transactions"
-        const selected = pathname === href
+        
+        
         router.push(href);
     };
 
     const handleTransferToWallet = () => {
         const href="/p2p"
-        const selected = pathname === href
+        
+        
         router.push(href);
     };
 
