@@ -19,6 +19,8 @@ RUN npm install --legacy-peer-deps
 # Rebuild native modules to match the container's environment
 RUN npm rebuild bcrypt --build-from-source
 
+RUN npm run db:generate
+
 # Build the Next.js application
 RUN npm run build
 
