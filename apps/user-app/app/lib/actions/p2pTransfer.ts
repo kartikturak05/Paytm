@@ -3,6 +3,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../auth";
 import prisma from "@repo/db/client";
 import { Prisma } from '@prisma/client';
+import { redirect } from "next/navigation";
+
 
 
 export async function p2pTransfer(to: string, amount: number) {
@@ -51,6 +53,6 @@ export async function p2pTransfer(to: string, amount: number) {
                 timestamp:new Date(),
             }
           })
-
     });
+    redirect("/transactions")    
 }

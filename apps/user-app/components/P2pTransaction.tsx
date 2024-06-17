@@ -41,7 +41,7 @@ export const P2pTransaction = ({
                         </div>
                     </div>
                     <div className="flex flex-col justify-center pl-10">
-                        {name === "send" ? "+" : "-"} Rs {Number(t.amount) / 100}
+                        {name === "send" ? "-" : "+"} Rs {Number(t.amount) / 100}
                     </div>
                 </div>
             ))}

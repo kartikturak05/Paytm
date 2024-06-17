@@ -12,7 +12,6 @@ export const authOptions = {
           },
           // TODO: User credentials type from next-aut
           async authorize(credentials: any) {
-            console.log("h1")
             // Do zod validation, OTP validation here
             const hashedPassword = await bcrypt.hash(credentials.password, 10);
             const existingUser = await db.user.findFirst({
@@ -22,18 +21,18 @@ export const authOptions = {
             });
 
             if (existingUser) {
-            console.log("h1")
+   
 
                 const passwordValidation = await bcrypt.compare(credentials.password, existingUser.password);
                 if (passwordValidation) {
-            console.log("h1")
+      
 
                     return {
                         id: existingUser.id.toString(),
                         name: existingUser.name,
                         email: existingUser.number
                     }
-            console.log("h1")
+          
 
                 }
                 return null;
@@ -46,7 +45,6 @@ export const authOptions = {
                         password: hashedPassword
                     }
                 });
-            console.log("h1")
 
             
                 return {
@@ -66,7 +64,6 @@ export const authOptions = {
     callbacks: {
         // TODO: can u fix the type here? Using any is bad
         async session({ token, session }: any) {
-            console.log("hello")
             session.user.id = token.sub
 
             return session
